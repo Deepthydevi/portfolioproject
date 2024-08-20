@@ -92,13 +92,15 @@
   </li>
 </ul>
   </div>
-  <div class="col-md mb-3">
-    <a href="#">
-      <img class="img-fluid img-thumbnail" src="https://www.researchgate.net/publication/354550914/figure/fig1/AS:11431281093543194@1667233604775/General-model-of-the-drowsy-detection-system.png"'>
-    </a>
-  </div>
-</div>
     </div>
+      <div class="col-md mb-3">
+    <h6 class="text-primary">Project Image</h6>
+    {% if details.projectimg %}
+        <img src="{{ details.projectimg.url }}" alt="Project Image" class="img-fluid" />
+    {% else %}
+        <p>No image available</p>
+    {% endif %}
+</div>
    <div class="col-md mb-5">
                 <!-- Skills -->
                 <h2 class="mb-5">Skills</h2>

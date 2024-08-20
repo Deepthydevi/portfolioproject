@@ -22,6 +22,7 @@ def createprofile(request):
         companyname = request.POST.get('companyname')
         jobposition = request.POST.get('jobposition')
         aboutme = request.POST.get('aboutme')
+        experience=request.POST.get('experience')
         user = userprofile(
             fullname=fullname,
             gender=gender,
@@ -40,7 +41,8 @@ def createprofile(request):
             projectlink=projectlink,
             companyname=companyname,
             jobposition=jobposition,
-            aboutme=aboutme
+            aboutme=aboutme,
+            experience=experience
         )
         user.save()
     return render(request, 'create.html')
@@ -66,30 +68,32 @@ def updatedetails(request, user_id):
         skills = request.POST.get('skills')
         projecttitle = request.POST.get('projecttitle')
         projectdescription = request.POST.get('projectdescription')
-        projectimg = request.POST.get('projectimg')
+        projectimg = request.FILES.get('projectimg')
         projectlink = request.POST.get('projectlink')
         companyname = request.POST.get('companyname')
         jobposition = request.POST.get('jobposition')
         aboutme = request.POST.get('aboutme')
+        experience=request.POST.get('experience')
 
-        user.fullname=fullname,
-        user.gender=gender,
-        user.DOB=DOB,
-        user.address=address,
-        user.mobilenumber=mobilenumber,
-        user.email=email,
-        user.graduation=graduation,
-        user.university=university,
-        user.percentage=percentage,
-        user.additionalcourses=additionalcourses,
-        user.skills=skills,
-        user.projecttitle=projecttitle,
-        user.projectdescription=projectdescription,
-        user.projectimg=projectimg,
-        user.projectlink=projectlink,
-        user.companyname=companyname,
-        user.jobposition=jobposition,
-        user.aboutme=aboutme,
+        user.fullname=fullname
+        user.gender=gender
+        user.DOB=DOB
+        user.address=address
+        user.mobilenumber=mobilenumber
+        user.email=email
+        user.graduation=graduation
+        user.university=university
+        user.percentage=percentage
+        user.additionalcourses=additionalcourses
+        user.skills=skills
+        user.projecttitle=projecttitle
+        user.projectdescription=projectdescription
+        user.projectimg=projectimg
+        user.projectlink=projectlink
+        user.companyname=companyname
+        user.jobposition=jobposition
+        user.aboutme=aboutme
+        user.experience=experience
         user.save()
         return redirect('details')
 
@@ -100,6 +104,5 @@ def deletedetails(request, user_id):
     user = userprofile.objects.get(id=user_id)
     user.delete()
     return render(request, 'delete.html', {'user': user})
-
 
 

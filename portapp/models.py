@@ -16,7 +16,7 @@ class userprofile(models.Model):
     skills = models.CharField(max_length=200)
     projecttitle = models.CharField(max_length=200, blank=True, null=True)
     projectdescription = models.CharField(max_length=200, blank=True, null=True)
-    projectimg = models.ImageField(upload_to='porject_media')
+    projectimg = models.ImageField(upload_to='project_media', blank=True, null=True)
     projectlink = models.URLField(max_length=200, blank=True, null=True)
     experience = models.CharField(max_length=300)
     companyname=models.CharField(max_length=300)

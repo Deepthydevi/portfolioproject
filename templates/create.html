@@ -2,101 +2,100 @@
 <html lang="en">
 <head>
     <title>Create User Profile</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
 </head>
 <body>
- <form action="" method="POST" name="myForm">
-      {% csrf_token %}
     <div class="container mt-3">
-        <h3 class="mb-4">Personal Information</h3>
+        <form action="" method="POST" enctype="multipart/form-data" name="myForm">
+            {% csrf_token %}
+            <h3 class="mb-4">Personal Information</h3>
 
             <div class="form-group">
-                <label for="">FULL NAME</label>
-                <input type="text" class="form-control" name="fullname" placeholder="Enter your full name">
+                <label for="fullname">FULL NAME</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name" required>
             </div>
             <div class="form-group">
-            <label for="">GENDER:</label>
-            <input type="text" class="form-control" name="gender" placeholder="Enter your gender here" required="true">
+                <label for="gender">GENDER:</label>
+                <input type="text" class="form-control" id="gender" name="gender" placeholder="Enter your gender here" required>
             </div>
             <div class="form-group">
-            <label for="">DATE OF BIRTH:</label>
-            <input type="date"  class="form-control" name="DOB" required="true">
+                <label for="DOB">DATE OF BIRTH:</label>
+                <input type="date" class="form-control" id="DOB" name="DOB" required>
             </div>
 
             <div class="form-group">
-            <label for="">ADDRESS:</label>
-            <input type="text"  class="form-control" name="address" placeholder="Enter your address" required="true"></input>
+                <label for="address">ADDRESS:</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
             </div>
             <div class="form-group">
-            <label for="">MOBILE NUMBER:</label>
-            <input type="text" class="form-control" name="mobilenumber" maxlength="10" required="true">
+                <label for="mobilenumber">MOBILE NUMBER:</label>
+                <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" maxlength="10" required>
             </div>
             <div class="form-group">
-            <label for="">EMAIL:</label>
-            <input type="email" class="form-control" name="email" required="true" >
+                <label for="email">EMAIL:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
 
-         <h3 class="mb-4">Education Details</h3>
-           <div class="form-group">
-                <label for="">Graduation:</label>
-                <input type="text" class="form-control" name="graduation" required="true">
+            <h3 class="mb-4">Education Details</h3>
+            <div class="form-group">
+                <label for="graduation">Graduation:</label>
+                <input type="text" class="form-control" id="graduation" name="graduation" required>
             </div>
-           <div class="form-group">
-                <label for="">Percentage/CGPA:</label>
-                <input type="text" class="form-control" name="percentage" required="true">
+            <div class="form-group">
+                <label for="percentage">Percentage/CGPA:</label>
+                <input type="text" class="form-control" id="percentage" name="percentage" required>
             </div>
-           <div class="form-group">
-                <label for="">University/College:</label>
-                <input type="text" class="form-control" name="university" required="true">
+            <div class="form-group">
+                <label for="university">University/College:</label>
+                <input type="text" class="form-control" id="university" name="university" required>
             </div>
-           <div class="form-group">
-                <label for="">AdditionalCourses:</label>
-                <input type="text" class="form-control" name="additionalcourses" required="true">
+            <div class="form-group">
+                <label for="additionalcourses">Additional Courses:</label>
+                <input type="text" class="form-control" id="additionalcourses" name="additionalcourses" required>
             </div>
-        <div class="form-group">
-                <label for="">Skills:</label>
-                <input type="text" class="form-control" name="skills" required="true">
-            </div>
-           <h3 class="mb-4">Project Details</h3>
-        <div class="form-group">
-                <label for="">Project Title:</label>
-                <input type="text" class="form-control" name="projecttitle"  required="true">
-            </div>
-        <div class="form-group">
-                <label for="">Project Description:</label>
-                <input type="textarea" class="form-control" name="projectdescription" required="true">
-            </div>
-        <div class="form-group">
-                <label for="">Project Image:</label>
-                <input type="file" class="form-control" name="projectimg"  required="true">
-            </div>
-        <div class="form-group">
-                <label for="">Project Link:</label>
-                <input type="url" class="form-control" name="projectlink" required="true">
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <input type="text" class="form-control" id="skills" name="skills" required>
             </div>
 
-        <h3 class="mb-4">Work Experience</h3>
-        <div class="form-group">
-                <label for="">Experience:</label>
-                <input type="text" class="form-control" name="experience" required="true">
+            <h3 class="mb-4">Project Details</h3>
+            <div class="form-group">
+                <label for="projecttitle">Project Title:</label>
+                <input type="text" class="form-control" id="projecttitle" name="projecttitle" required>
             </div>
-        <div class="form-group">
-                <label for="">Company Name:</label>
-                <input type="text" class="form-control" name="companyname" required="true">
+            <div class="form-group">
+                <label for="projectdescription">Project Description:</label>
+                <textarea class="form-control" id="projectdescription" name="projectdescription" rows="3" required></textarea>
             </div>
-        <div class="form-group">
-                <label for="">Job Position:</label>
-                <input type="text" class="form-control" name="jobposition" required="true">
+            <div class="form-group">
+                <label for="projectimg">Project Image:</label>
+                <input type="file" class="form-control" id="projectimg" name="projectimg" required>
             </div>
-         <div class="form-group">
-                <label for="">About Me:</label>
-                <input type="textarea" class="form-control" name="aboutme" required="true">
+            <div class="form-group">
+                <label for="projectlink">Project Link:</label>
+                <input type="url" class="form-control" id="projectlink" name="projectlink" required>
             </div>
-        <button class="btn btn-warning" >Submit</button>
-        <a href="{% url 'details' %}" class="btn btn-info">View Details</a>
 
+            <h3 class="mb-4">Work Experience</h3>
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+                <input type="text" class="form-control" id="experience" name="experience" required>
+            </div>
+            <div class="form-group">
+                <label for="companyname">Company Name:</label>
+                <input type="text" class="form-control" id="companyname" name="companyname" required>
+            </div>
+            <div class="form-group">
+                <label for="jobposition">Job Position:</label>
+                <input type="text" class="form-control" id="jobposition" name="jobposition" required>
+            </div>
+            <div class="form-group">
+                <label for="aboutme">About Me:</label>
+                <textarea class="form-control" id="aboutme" name="aboutme" rows="3" required></textarea>
+            </div>
 
-
-
+            <button type="submit" class="btn btn-warning">Submit</button>
+            <a href="{% url 'details' %}" class="btn btn-info">View Details</a>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ER6xPD
